@@ -1,0 +1,25 @@
+{
+	"name": "FBtweak Blog Example",
+	"version": "0.1",
+	"description": "Hides annoying shit on Facebook.",
+	"background": {
+		"scripts": [
+			"background.js"
+		]
+	},
+	"page_action": {
+		"default_icon" : "icons/icon.png",
+		"default_title" : "FBtweak",
+		"default_popup": "popup.html"
+	},
+	"content_scripts": [
+		{
+			"matches": ["https://www.facebook.com/*"],
+			"js": ["page.js"]
+		}
+	],
+	"permissions": [
+		"tabs"
+	],
+	"manifest_version": 2
+}
