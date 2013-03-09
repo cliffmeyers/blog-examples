@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>AngularJS / I18n-JS Integration</title>
+</head>
+<body data-ng-controller="RootController">
+
+<h1>AngularJS / I18n-JS Integration</h1>
+
+<label>
+	Language:
+
+	<select data-ng-model="selectedLocale"
+			data-ng-options="locale.label for locale in locales"
+			data-ng-change="changeLocale()">
+	</select>
+</label>
+
+<div data-ng-view></div>
+
+<script src="js/lib/jquery-1.9.1.js"></script>
+<script src="js/lib/angular-1.0.4.js"></script>
+<script src="js/lib/underscore-1.4.4.js"></script>
+<script src="js/lib/i18n-3.0.0.rc3.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/I18nAdapter.js"></script>
+<script src="js/I18nAngular.js"></script>
+
+<script>
+	'use strict';
+
+	function initAngular() {
+		angular.element(document).ready(function() {
+			angular.bootstrap(document, ['ng-i18n-js']);
+		});
+	}
+
+	function initI18n() {
+		var i18n = new I18nAdapter(['en_US', 'de_DE'], 'en_US');
+		i18n.setLocale('en-us', ['i18n/en-us/messages.json', 'i18n/en-us/messages2.json'])
+			.then(initAngular);
+		window.i18nAdapter = i18n;
+	}
+
+	initI18n();
+</script>
+
+</body>
+</html>
