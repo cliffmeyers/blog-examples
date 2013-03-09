@@ -1,5 +1,4 @@
 Code from my blog at http://cliffmeyers.com/blog
-================================================
 
 ## ng-g11n
 
