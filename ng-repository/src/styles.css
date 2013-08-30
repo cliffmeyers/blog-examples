@@ -1,0 +1,33 @@
+body {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 1em;
+    margin: 0.5em !important;
+}
+
+header h1 {
+    margin: 0 0 0.25em 0;
+}
+
+h2 {
+    font-size: 1em;
+}
+
+header ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+header ul li {
+    display: inline-block;
+}
+
+header .warning {
+    color: #f00;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 0.5em;
+}
+
+.progress {
+    width: 200px;
+}

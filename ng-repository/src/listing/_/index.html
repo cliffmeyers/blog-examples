@@ -1,0 +1,20 @@
+<h2>Listings</h2>
+
+<div data-ng-if="loading">
+	<progress data-percent="100" class="progress-striped active"></progress>
+</div>
+
+<div data-ng-if="!loading">
+	<p>Last {{listings.length}} posts</p>
+
+	<div class="listings">
+		<div class="item" data-ng-repeat="listing in listings">
+			<img src="{{listing.thumbUrl}}"/>
+			<div class="content">
+				<a href="{{listing.data.url}}" target="_blank">{{listing.data.title}}</a>
+				<span>by {{listing.data.author}}</span>
+				<span>at {{listing.data.created_utc|date:'short'}}</span>
+			</div>
+		</div>
+	</div>
+</div>

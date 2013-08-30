@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" data-ng-app="ngreddit">
+<head>
+	<meta charset="utf-8">
+	<title>Reddit Browser</title>
+	<link rel="stylesheet" type="text/css" href="styles.css"/>
+	<link rel="stylesheet" type="text/css" href="listing/_/listing.css"/>
+	<link rel="stylesheet" type="text/css" href="subreddit/_/subreddit.css"/>
+	<link rel="stylesheet" type="text/css" href="../lib/bootstrap-2.3.2-combined.min.css"/>
+</head>
+<body data-ng-controller="RootController">
+
+	<header>
+		<h1>Reddit Browser</h1>
+
+		<div class="btn-group">
+			<button type="button" class="btn btn-primary" data-ng-model="selectedView" data-btn-radio="'listing'" data-ng-click="navigateMenu('listing')">Listings</button>
+			<button type="button" class="btn btn-primary" data-ng-model="selectedView" data-btn-radio="'subreddit'" data-ng-click="navigateMenu('subreddit')">Subreddits</button>
+		</div>
+
+		<div class="warning">Caution: content on Reddit can be NSFW.</div>
+
+		<hr/>
+	</header>
+
+	<div id="content" data-ng-view></div>
+
+<script src="../lib/jquery-2.0.3.js"></script>
+<script src="../lib/angular-1.2.0rc1.js"></script>
+<script src="../lib/angular-route-1.2.0rc1.js"></script>
+<script src="../lib/underscore-1.5.1.js"></script>
+<script src="../lib/ui-bootstrap-0.5.0.js"></script>
+<script src="../lib/ui-bootstrap-tpls-0.5.0.js"></script>
+<script src="../lib/namespace.js"></script>
+
+<script src="ConfigModel.js"></script>
+<script src="RootController.js"></script>
+
+<script src="listing/ListingRepository.js"></script>
+<script src="listing/ListingRepositoryMock.js"></script>
+<script src="listing/ListingRepositoryInMemoryMock.js"></script>
+<script src="listing/IndexController.js"></script>
+<script src="listing/ListingModule.js"></script>
+
+<script src="subreddit/SubredditRepository.js"></script>
+<script src="subreddit/SubredditRepositoryMock.js"></script>
+<script src="subreddit/IndexController.js"></script>
+<script src="subreddit/SubredditModule.js"></script>
+
+<script src="app.js"></script>
+
+</body>
+</html>

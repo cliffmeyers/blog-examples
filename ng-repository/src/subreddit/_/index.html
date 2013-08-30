@@ -1,0 +1,20 @@
+<h2>Subreddits</h2>
+
+<div data-ng-if="loading">
+	<progress data-percent="100" class="progress-striped active"></progress>
+</div>
+
+<div data-ng-if="!loading">
+	<p>{{subreddits.length}} popular Subreddits</p>
+
+	<div class="subreddits">
+		<div class="item" data-ng-repeat="reddit in subreddits">
+			<img src="{{reddit.data.header_img}}"/>
+			<div class="content">
+				<a href="http://www.reddit.com{{reddit.data.url}}" target="_blank">{{reddit.data.title}}</a>
+				<span>{{reddit.data.public_description}}</span>
+				<span>with {{reddit.data.subscribers}} subscribers</span>
+			</div>
+		</div>
+	</div>
+</div>

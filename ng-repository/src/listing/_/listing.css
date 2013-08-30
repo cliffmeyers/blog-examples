@@ -1,0 +1,31 @@
+.listings {
+    max-width: 800px;
+    list-style-type: none;
+    margin: 0;
+}
+
+.listings .item {
+    margin: 0.5em 0;
+    padding: 0.25em;
+}
+
+.listings .item img {
+    width: 70px;
+    height: 60px;
+    float: left;
+    border: 1px solid #000;
+}
+
+.listings .item .content {
+    padding-left: 80px;
+}
+
+.listings .content:after {
+    content: '';
+    display: block;
+    clear: left;
+}
+
+.listings .item:nth-child(odd) {
+    background-color: #ddd;
+}
