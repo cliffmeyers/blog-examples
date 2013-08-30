@@ -15,3 +15,7 @@ Integrates [i18n-js](https://github.com/fnando/i18n-js) with [angular.js](https:
 * Locale can be changed at runtime.
 * Translation support.
 * Hooks for formatting of numbers, currencies and dates.
+
+## ng-repository
+
+Illustrates use of the Repository pattern for mocking server dependencies in an AngularJS application. Sample app consists of two pages that fetch posts and forums from reddit.com.
