@@ -34,7 +34,9 @@
 	module.factory('listingRepository', ['$http', '$q', '$timeout', 'configModel', function($http, $q, $timeout, configModel) {
 		return !configModel.useMocks ?
 			new ngreddit.listing.ListingRepository($http) :
-			new ngreddit.listing.ListingRepositoryInMemoryMock($q, $timeout);
+			new ngreddit.listing.ListingRepositoryMock($http);
+		// NOTE: can also use an in memory mock instead
+		// new ngreddit.listing.ListingRepositoryInMemoryMock($q, $timeout);
 	}]);
 
 	module.config(['$routeProvider', function($routeProvider) {

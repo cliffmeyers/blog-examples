@@ -24,11 +24,18 @@
 
 	Namespace.create('ngreddit.listing');
 
+	/**
+	 * Mock which returns arbitrary data create in memory (no server call).
+	 * @param $q
+	 * @param $timeout
+	 * @constructor
+	 */
 	ngreddit.listing.ListingRepositoryInMemoryMock = function($q, $timeout) {
 
 		this.fetchNewListings = function() {
 			var deferred = $q.defer();
 
+			// just return an empty array
 			$timeout(function() {
 				deferred.resolve([]);
 			}, 500);
